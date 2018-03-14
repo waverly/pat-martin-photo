@@ -1,41 +1,37 @@
-import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Slideshow from './Slideshow';
+import React from "react";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import Slideshow from "./Slideshow";
 
-import '../css/Home.css';
+import "../css/Home.css";
 
 class Home extends React.Component {
-
-  constructor(){
+  constructor() {
     super();
     this.state = {
       selectedIndex: 0,
-      animationDirection: 'previous'
+      animationDirection: "previous"
     };
   }
 
-  render(){
-
-    return(
+  render() {
+    return (
       <ReactCSSTransitionGroup
-      transitionName="load"
-      transitionAppear={true}
-      transitionEnterTimeout={700}
-      transitionAppearTimeout={700}
-      transitionLeaveTimeout={700}
+        transitionName="load"
+        transitionAppear={true}
+        transitionEnterTimeout={700}
+        transitionAppearTimeout={700}
+        transitionLeaveTimeout={700}
       >
         <div className="slideshow-component">
           <Slideshow
             next={this.props.next}
             previous={this.props.previous}
             activeSlide={this.props.activeSlide}
-            images={this.props.images} />
+            slides={this.props.slides}
+          />
         </div>
-
-    </ReactCSSTransitionGroup>
-
-
-    )
+      </ReactCSSTransitionGroup>
+    );
   }
 }
 
