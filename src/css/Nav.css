@@ -1,0 +1,246 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
+/*.................................................................................*/
+/*$break-large-desktop: 2500px;*/
+/*$break-infinite: 500000px;*/
+/*....................................SCSS MIXINS..................................*/
+/*....................................General settings..................................*/
+/*.....................TEXT MARK STYLES......................*/
+::-moz-selection {
+  background: transparent;
+  text-shadow: none; }
+
+::selection {
+  background: transparent;
+  text-shadow: none; }
+
+/*.....................ACTIVE CLASSES......................*/
+.active {
+  opacity: 1; }
+
+.blacked_text {
+  color: #FFFFFF; }
+
+.blacked_path {
+  fill: #FFFFFF; }
+
+.blacked_background {
+  background-color: #000000; }
+
+/*....................HIDING SCROLLBAR.....................*/
+::-webkit-scrollbar {
+  display: none; }
+
+* {
+  -webkit-overflow-scrolling: touch; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: 0; }
+
+/*.....................GENERAL STYLES......................*/
+html {
+  font-family: helvetica;
+  width: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  box-sizing: border-box;
+  background-color: transparent; }
+
+body {
+  width: 100vw;
+  height: auto;
+  margin: 0, 0;
+  padding: 0, 0;
+  display: block;
+  position: relative;
+  background: #FFFFFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400; }
+
+p, a, li {
+  font-size: 10px;
+  list-style-type: none;
+  letter-spacing: 1px;
+  color: #000000; }
+
+input, textarea, select, a, li {
+  text-decoration: none; }
+
+a {
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 26px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    a {
+      font-size: 12px;
+      line-height: 17px; } }
+
+.a-hover {
+  color: #000000;
+  transition: color 0.4s ease;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  -ms-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease; }
+  .a-hover:hover {
+    color: #F5F5F5;
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+    @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+
+p {
+  font-size: 10px;
+  line-height: 26px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    p {
+      font-size: 12px;
+      line-height: 17px; } }
+
+h1 {
+  font-size: 30px;
+  line-height: 50px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 2px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h1 {
+      font-size: 25px; } }
+
+h2 {
+  font-size: 22px;
+  line-height: 36px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 0px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h2 {
+      font-size: 20px;
+      line-height: 36px; } }
+
+.pop {
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  z-index: 14;
+  border-top: 1px solid black;
+  background: rgba(255, 255, 255, 0.2); }
+
+/*.........................MAIN............................*/
+table {
+  width: 100vw;
+  height: 100vh; }
+  table tr td {
+    vertical-align: middle; }
+
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
+.nav-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: 25px;
+  z-index: 10;
+  text-transform: uppercase; }
+  .nav-wrap .name .name-p:hover {
+    cursor: pointer;
+    color: #a8a8a8; }
+  .nav-wrap .name .reveal .item {
+    margin-top: 1em; }
+  .nav-wrap .name .hide {
+    margin-top: -50em !important; }
+  .nav-wrap .name .info {
+    width: 300px; }
+    .nav-wrap .name .info p {
+      width: 100%; }
+
+@media screen and (max-width: 1000px) {
+  .nav-wrap .name .info {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    opacity: .8; } }

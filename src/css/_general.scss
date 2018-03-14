@@ -1,0 +1,167 @@
+@import 'variables';
+@import 'mixins';
+/*....................................General settings..................................*/
+
+
+
+
+/*.....................TEXT MARK STYLES......................*/
+
+::-moz-selection {
+    background: transparent;
+    text-shadow: none;
+}
+
+
+::selection {
+    background: transparent;
+    text-shadow: none;
+}
+
+
+
+
+
+
+/*.....................ACTIVE CLASSES......................*/
+
+.active{
+  opacity:1;
+}
+
+a:active{
+
+}
+
+
+
+.blacked_text{
+  color:$white;
+}
+
+.blacked_path{
+  fill:$white;
+}
+.blacked_background{
+  background-color: $black;
+}
+
+
+
+
+
+/*....................HIDING SCROLLBAR.....................*/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+*{
+  -webkit-overflow-scrolling: touch;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline:0;
+}
+
+
+
+
+/*.....................GENERAL STYLES......................*/
+
+html{
+  font-family: helvetica;
+  width: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+
+body {
+  width: 100vw;
+  height: auto;
+  margin: 0, 0;
+  padding: 0, 0;
+  display: block;
+  position: relative;
+  background: $white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+}
+
+
+p, a, li {
+  font-size: $font-size-p;
+  list-style-type: none;
+  letter-spacing:$letter-spacing;
+  color: $black;
+}
+
+
+input, textarea, select, a, li {
+  text-decoration: none;
+}
+
+a{
+  cursor:pointer;
+  @include p();
+}
+
+.a-hover{
+  @include hover-effect-color($black, $light-grey);
+}
+
+p{
+  @include p();
+}
+
+h1{
+  @include h1();
+}
+
+h2{
+  @include h2();
+}
+
+
+
+.pop{
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  z-index:$z-pop;
+  border-top: 1px solid black;
+  background: rgba(255,255,255,0.2);
+}
+
+
+/*.........................MAIN............................*/
+// main {
+//   height: 100vh;
+//   width:100vw;
+//   position: relative;
+//   display: block;
+//   list-style-type: none;
+//   display: block;
+//   overflow-x: scroll;
+//   overflow-y: hidden;
+// }
+
+
+
+
+
+table{
+  width: 100vw;
+  height: 100vh;
+  tr{
+    td{
+      vertical-align: middle;
+    }
+  }
+}

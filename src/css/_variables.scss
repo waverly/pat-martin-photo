@@ -1,0 +1,102 @@
+/*....................................SCSS VARIABLES..................................*/
+
+// ........................................................ELEMENTS
+$nav-height: 50px;
+
+
+// ........................................................FONT WEIGHTS
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 900;
+
+
+// ........................................................FONT SIZES
+$font-size-h1:30px;
+$font-size-h2:22px;
+$font-size-h3:18px;
+$font-size-p: 10px;
+
+$font-size-h1-mobile: 25px;
+$font-size-h2-mobile: 20px;
+$font-size-h3-mobile: 18px;
+$font-size-p-mobile: 12px;
+
+// ........................................................FONT FAMILIES
+$font-family-h1: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-h2: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-h3: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-p: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+
+
+// ........................................................FONT LINEHEIGHTS
+$line-height-h1: 50px;
+$line-height-h2: 36px;
+$line-height-h3: 30px;
+$line-height-p: 26px;
+
+$line-height-h1-mobile: 40px;
+$line-height-h2-mobile: 36px;
+$line-height-h3-mobile: 20px;
+$line-height-p-mobile: 17px;
+
+
+$letter-spacing: 1px;
+$letter-spacing-h1: 2px;
+$letter-spacing-h2: 0px;
+$letter-spacing-h3: 1px;
+$letter-spacing-paragraph:1px;
+
+
+// ........................................................COLORS
+$black: #000000;
+$white: #FFFFFF;
+$yellow: #ede611;
+$green: #00FF00;
+$red:#FF0000;
+$pink:#f7c0cd;
+$grey:#a8a8a8;
+$light-grey:#F5F5F5;
+$burnt: #AA5F00;
+$cream: #FCFFED;
+
+
+// ........................................................MARGINS
+$margin-sides: 25px;
+$margin-bottom: 35px;
+$margin-top: 150px;
+$margin-sides-mobile:10px;
+$margin-left-paragraph:5px;
+$margin-top-li:100px;
+$margin-top-p:20px;
+
+// ........................................................TRANSITION TIMINGS
+$transition-extreme-slow: 1.4s;
+$transition-slow: .6s;
+$transition-medium: .4s;
+$transition-fast: .2s;
+
+
+
+// ........................................................Z-INDEXES
+$z-loader:15;
+$z-pop:14;
+$z-nav:13;
+$z-share:13;
+
+$z-clickOut: 12;
+$z-nav:10;
+$z-credits:8;
+$z-feed:7;
+
+$z-detail-li:4;
+$z-detail-cover:3;
+
+
+
+$z-logo:0;
+
+
+
+
+/*....................................................................................*/

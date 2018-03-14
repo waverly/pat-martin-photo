@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'mixins';
+
+.toggle-wrap{
+  position: fixed;
+  bottom: $margin-sides;
+  left: $margin-sides;
+  z-index: 1000;
+
+  .toggle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
+  .black{
+    background-color: black;
+    margin-bottom: .75em;
+  }
+  .white{
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: $break-phone){
+
+  .toggle-wrap{
+    display: none;
+    left: 15px;
+  }
+
+}
