@@ -82,11 +82,25 @@ class App extends Component {
 
   componentDidMount() {
     Prismic.api(apiEndpoint).then(api => {
-      api.query("").then(response => {
-        console.log(response); // response is the response object, response.results holds the documents
-        console.log(response.results);
-        this.addData(response.results);
-      });
+      api
+        .query(Prismic.Predicates.at("document.type", "image"), {
+          orderings: "[my.image.order]"
+        })
+        .then(response => {
+          console.log(response); // response is the response object, response.results holds the documents
+          console.log(response.results);
+          this.addData(response.results);
+        });
+    });
+
+    Prismic.api(apiEndpoint).then(api => {
+      api
+        .query(Prismic.Predicates.at("document.type", "about"))
+        .then(response => {
+          console.log(response); // response is the response object, response.results holds the documents
+          console.log(response.results);
+          this.addData(response.results);
+        });
     });
     // end of api
   }

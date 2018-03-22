@@ -1,8 +1,16 @@
 /*....................................SCSS VARIABLES..................................*/
 
-// ........................................................ELEMENTS
-$nav-height: 50px;
-
+// @font-face {
+//     font-family: neutralbold;
+//     src: url('../assets/fonts/NeutralStd-Bold.ttf') format('truetype');
+//     // , url('/assets/fonts/didot/Didot.otf') format('otf')
+// }
+//
+// @font-face {
+//     font-family: neutralreg;
+//     src: url('../assets/fonts/NeutralStd-Regular.ttf') format('truetype');
+//     // , url('/assets/fonts/didot/Didot.otf') format('otf')
+// }
 
 // ........................................................FONT WEIGHTS
 $font-weight-light: 300;
@@ -11,33 +19,38 @@ $font-weight-heavy: 900;
 
 
 // ........................................................FONT SIZES
-$font-size-h1:30px;
-$font-size-h2:22px;
-$font-size-h3:18px;
-$font-size-p: 10px;
+$font-size-h1:85px;
+$font-size-h2:52px;
+$font-size-h3:36px;
+$font-size-h4: 20px;
+$font-size-p: 12px;
 
 $font-size-h1-mobile: 25px;
 $font-size-h2-mobile: 20px;
 $font-size-h3-mobile: 18px;
+$font-size-h4-mobile: 16px;
 $font-size-p-mobile: 12px;
 
 // ........................................................FONT FAMILIES
-$font-family-h1: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-h2: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-h3: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-p: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-h1: helvetica, sans-serif;
+$font-family-h2: helvetica, sans-serif;
+$font-family-h3: helvetica, sans-serif;
+$font-family-h4: helvetica, sans-serif;
+$font-family-p: helvetica, sans-serif;
 
 
 
 // ........................................................FONT LINEHEIGHTS
-$line-height-h1: 50px;
-$line-height-h2: 36px;
-$line-height-h3: 30px;
+$line-height-h1: 110px;
+$line-height-h2: 65px;
+$line-height-h3: 45px;
+$line-height-h4: 20px;
 $line-height-p: 26px;
 
 $line-height-h1-mobile: 40px;
 $line-height-h2-mobile: 36px;
 $line-height-h3-mobile: 20px;
+$line-height-h4-mobile: 20px;
 $line-height-p-mobile: 17px;
 
 
@@ -45,6 +58,7 @@ $letter-spacing: 1px;
 $letter-spacing-h1: 2px;
 $letter-spacing-h2: 0px;
 $letter-spacing-h3: 1px;
+$letter-spacing-h4: 1px;
 $letter-spacing-paragraph:1px;
 
 
@@ -55,11 +69,9 @@ $yellow: #ede611;
 $green: #00FF00;
 $red:#FF0000;
 $pink:#f7c0cd;
-$grey:#a8a8a8;
+$grey:#e2e2e2;
 $light-grey:#F5F5F5;
-$burnt: #AA5F00;
-$cream: #FCFFED;
-
+$dark-grey: #585858;
 
 // ........................................................MARGINS
 $margin-sides: 25px;
@@ -85,7 +97,6 @@ $z-nav:13;
 $z-share:13;
 
 $z-clickOut: 12;
-$z-nav:10;
 $z-credits:8;
 $z-feed:7;
 
@@ -96,6 +107,9 @@ $z-detail-cover:3;
 
 $z-logo:0;
 
+
+// ........................................................ELEMENT HEIGHTS
+$nav-height: 100px;
 
 
 

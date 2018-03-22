@@ -1,21 +1,20 @@
-@import 'reset';
-@import 'general';
-@import 'variables';
+@import "reset";
+@import "general";
+@import "variables";
 
-
-.slider-wrap{
+.slider-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
 
-  .img-wrap{
+  .img-wrap {
     width: 60%;
     height: 60%;
     text-align: center;
 
-    img{
+    img {
       max-width: 100%;
       max-height: 100%;
       width: auto;
@@ -24,19 +23,27 @@
   }
 }
 
-.white{
+.white {
   background-color: white;
-  transition: .5s all;
+  transition: 0.5s all;
 
-  h1, h2, h3, p, a{
+  h1,
+  h2,
+  h3,
+  p,
+  a {
     color: black;
   }
 }
 
-.black{
+.black {
   background-color: #0a0a0a;
-  transition: .5s all;
-  h1, h2, h3, p, a{
+  transition: 0.5s all;
+  h1,
+  h2,
+  h3,
+  p,
+  a {
     color: white;
   }
 }
@@ -46,7 +53,7 @@
 }
 .fade-leave.fade-leave-active {
   opacity: 0;
-  transition: opacity .5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .fade-enter {
@@ -55,7 +62,7 @@
 .fade-enter.fade-enter-active {
   opacity: 1;
   /* Delay the enter animation until the leave completes */
-  transition: opacity .4s ease-in .6s;
+  transition: opacity 0.4s ease-in 0.6s;
 }
 
 .fade-height {

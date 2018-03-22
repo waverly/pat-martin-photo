@@ -51,7 +51,22 @@ table {
 /*$break-large-desktop: 2500px;*/
 /*$break-infinite: 500000px;*/
 /*....................................SCSS MIXINS..................................*/
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
 /*....................................General settings..................................*/
+header {
+  background-color: #F5F5F5;
+  height: 100px;
+  width: 100vw;
+  z-index: 13;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  header img {
+    height: 80%; }
+
 /*.....................TEXT MARK STYLES......................*/
 ::-moz-selection {
   background: transparent;
@@ -62,9 +77,6 @@ table {
   text-shadow: none; }
 
 /*.....................ACTIVE CLASSES......................*/
-.active {
-  opacity: 1; }
-
 .blacked_text {
   color: #FFFFFF; }
 
@@ -101,12 +113,10 @@ body {
   padding: 0, 0;
   display: block;
   position: relative;
-  background: #FFFFFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400; }
+  background: #FFFFFF; }
 
 p, a, li {
-  font-size: 10px;
+  font-size: 12px;
   list-style-type: none;
   letter-spacing: 1px;
   color: #000000; }
@@ -116,9 +126,9 @@ input, textarea, select, a, li {
 
 a {
   cursor: pointer;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 26px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: helvetica, sans-serif;
   letter-spacing: 1px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
@@ -127,6 +137,33 @@ a {
     a {
       font-size: 12px;
       line-height: 17px; } }
+
+h3 a {
+  font-size: 36px;
+  line-height: 45px;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+  color: #e2e2e2; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h3 a {
+      font-size: 18px;
+      line-height: 20px; } }
+
+h4 a {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h4 a {
+      font-size: 16px;
+      line-height: 20px; } }
 
 .a-hover {
   color: #000000;
@@ -157,9 +194,9 @@ a {
         color: #000000 !important; } }
 
 p {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 26px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: helvetica, sans-serif;
   letter-spacing: 1px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
@@ -170,21 +207,22 @@ p {
       line-height: 17px; } }
 
 h1 {
-  font-size: 30px;
-  line-height: 50px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 85px;
+  line-height: 110px;
+  font-family: helvetica, sans-serif;
   letter-spacing: 2px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
   }*/ }
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     h1 {
-      font-size: 25px; } }
+      font-size: 25px;
+      line-height: 40px; } }
 
 h2 {
-  font-size: 22px;
-  line-height: 36px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 52px;
+  line-height: 65px;
+  font-family: helvetica, sans-serif;
   letter-spacing: 0px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
@@ -193,6 +231,32 @@ h2 {
     h2 {
       font-size: 20px;
       line-height: 36px; } }
+
+h3 {
+  font-size: 36px;
+  line-height: 45px;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h3 {
+      font-size: 18px;
+      line-height: 20px; } }
+
+h4 {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h4 {
+      font-size: 16px;
+      line-height: 20px; } }
 
 .pop {
   position: fixed;
@@ -245,7 +309,8 @@ table {
     align-items: center; }
     .slideshow-wrapper .slideshow img.slide {
       max-width: 100%;
-      max-height: 100%; }
+      max-height: 100%;
+      align-self: center; }
     .slideshow-wrapper .slideshow .counter {
       padding: 2em 0;
       height: 7em;
