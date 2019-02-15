@@ -17,13 +17,12 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-heavy: 900;
 
-
 // ........................................................FONT SIZES
-$font-size-h1:85px;
-$font-size-h2:52px;
-$font-size-h3:36px;
+$font-size-h1: 85px;
+$font-size-h2: 52px;
+$font-size-h3: 36px;
 $font-size-h4: 20px;
-$font-size-p: 12px;
+$font-size-p: 10px;
 
 $font-size-h1-mobile: 25px;
 $font-size-h2-mobile: 20px;
@@ -38,8 +37,6 @@ $font-family-h3: helvetica, sans-serif;
 $font-family-h4: helvetica, sans-serif;
 $font-family-p: helvetica, sans-serif;
 
-
-
 // ........................................................FONT LINEHEIGHTS
 $line-height-h1: 110px;
 $line-height-h2: 65px;
@@ -53,64 +50,55 @@ $line-height-h3-mobile: 20px;
 $line-height-h4-mobile: 20px;
 $line-height-p-mobile: 17px;
 
-
 $letter-spacing: 1px;
 $letter-spacing-h1: 2px;
 $letter-spacing-h2: 0px;
 $letter-spacing-h3: 1px;
 $letter-spacing-h4: 1px;
-$letter-spacing-paragraph:1px;
-
+$letter-spacing-paragraph: 1px;
 
 // ........................................................COLORS
 $black: #000000;
-$white: #FFFFFF;
+$white: #ffffff;
 $yellow: #ede611;
-$green: #00FF00;
-$red:#FF0000;
-$pink:#f7c0cd;
-$grey:#e2e2e2;
-$light-grey:#F5F5F5;
+$green: #00ff00;
+$red: #ff0000;
+$pink: #f7c0cd;
+$grey: #e2e2e2;
+$light-grey: #f5f5f5;
 $dark-grey: #585858;
 
 // ........................................................MARGINS
 $margin-sides: 25px;
 $margin-bottom: 35px;
 $margin-top: 150px;
-$margin-sides-mobile:10px;
-$margin-left-paragraph:5px;
-$margin-top-li:100px;
-$margin-top-p:20px;
+$margin-sides-mobile: 10px;
+$margin-left-paragraph: 5px;
+$margin-top-li: 100px;
+$margin-top-p: 20px;
 
 // ........................................................TRANSITION TIMINGS
 $transition-extreme-slow: 1.4s;
-$transition-slow: .6s;
-$transition-medium: .4s;
-$transition-fast: .2s;
-
-
+$transition-slow: 0.6s;
+$transition-medium: 0.4s;
+$transition-fast: 0.2s;
 
 // ........................................................Z-INDEXES
-$z-loader:15;
-$z-pop:14;
-$z-nav:13;
-$z-share:13;
+$z-loader: 15;
+$z-pop: 14;
+$z-nav: 13;
+$z-share: 13;
 
 $z-clickOut: 12;
-$z-credits:8;
-$z-feed:7;
+$z-credits: 8;
+$z-feed: 7;
 
-$z-detail-li:4;
-$z-detail-cover:3;
+$z-detail-li: 4;
+$z-detail-cover: 3;
 
-
-
-$z-logo:0;
-
+$z-logo: 0;
 
 // ........................................................ELEMENT HEIGHTS
 $nav-height: 100px;
-
-
 
 /*....................................................................................*/

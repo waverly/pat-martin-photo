@@ -2,6 +2,23 @@
 @import "general";
 @import "variables";
 
+#loading-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10000;
+}
+
+#loading-screen.loaded {
+  opacity: 0;
+  // z-index: 0;
+  visibility: hidden;
+  transition: 0.7s opacity, 1s visibility;
+}
+
 .slider-wrap {
   display: flex;
   justify-content: center;
@@ -37,7 +54,7 @@
 }
 
 .black {
-  background-color: #0a0a0a;
+  background-color: #121212;
   transition: 0.5s all;
   h1,
   h2,

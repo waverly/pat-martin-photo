@@ -2,13 +2,8 @@ import React from "react";
 import "../css/Slideshow.css";
 
 const Slide = props => {
-  // console.log(props);
-  const { slide, active } = props;
-  // console.log(props);
-  // console.log("image", props.image);
-  // console.log("second image", props.secondimage);
+  const { active } = props;
   if (props.secondimage) {
-    console.log(props.image, props.secondimage);
     return (
       <div
         style={{
@@ -17,14 +12,21 @@ const Slide = props => {
           maxHeight: "100%",
           transition: "opacity 0.5s",
           opacity: active ? "1" : "0",
+          zIndex: active ? "10" : "1",
           display: "flex",
           justifyContent: "space-between"
         }}
       >
-        <img className="slide" src={props.image} style={{ maxWidth: "45%" }} />
+        <img
+          className="slide"
+          alt={props.image}
+          src={props.image}
+          style={{ maxWidth: "45%" }}
+        />
         <img
           className="slide"
           src={props.secondimage}
+          alt={props.secondimage}
           style={{ maxWidth: "45%" }}
         />
       </div>
@@ -34,6 +36,7 @@ const Slide = props => {
       <img
         className="slide"
         src={props.image}
+        alt={props.image}
         style={{
           position: "absolute",
           maxWidth: "100%",
@@ -83,7 +86,7 @@ class Slideshow extends React.Component {
             className="slideshow"
             style={{
               width: "70vw",
-              height: "70vh",
+              height: "85vh",
               position: "relative"
             }}
             onClick={this.props.next}

@@ -7,7 +7,7 @@ import ColorToggle from "./ColorToggle";
 import ReactCSSTransitionReplace from "react-css-transition-replace";
 import "../css/App.css";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 
 const apiEndpoint = "https://patmartin.prismic.io/api/v2";
 
@@ -20,11 +20,15 @@ class App extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.handleIndexClick = this.handleIndexClick.bind(this);
+    this.determineLoading = this.determineLoading.bind(this);
+    this.toggleListView = this.toggleListView.bind(this);
 
     this.state = {
       slides: [],
       activeSlide: 0,
-      invert: false
+      invert: false,
+      loaded: false,
+      listView: false
     };
   }
 
@@ -51,6 +55,13 @@ class App extends Component {
   toggleWhite() {
     const invert = false;
     this.setState({ invert });
+  }
+
+  toggleListView() {
+    console.log("toggling list view");
+    this.setState(prevState => ({
+      listView: !prevState.listView
+    }));
   }
 
   handleIndexClick(key) {
@@ -80,15 +91,34 @@ class App extends Component {
     });
   }
 
+  determineLoading(time) {
+    if (!this.state.loading) {
+      setTimeout(() => {
+        console.log("fading page in");
+        this.setState({ loaded: true });
+      }, time);
+    }
+  }
+
   componentDidMount() {
+    // this.determineLoading();
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 999) {
+        this.setState(prevState => ({
+          listView: false
+        }));
+      }
+    });
+
     Prismic.api(apiEndpoint).then(api => {
       api
         .query(Prismic.Predicates.at("document.type", "image"), {
           orderings: "[my.image.order]"
         })
         .then(response => {
-          console.log(response); // response is the response object, response.results holds the documents
-          console.log(response.results);
+          // console.log(response); // response is the response object, response.results holds the documents
+          // console.log(response.results);
           this.addData(response.results);
         });
     });
@@ -109,71 +139,75 @@ class App extends Component {
   render() {
     return (
       <div className="router-ex">
-        <Route
-          render={({ location }) => (
-            <ReactCSSTransitionReplace
-              transitionName="fade"
-              transitionEnterTimeout={1000}
-              transitionLeaveTimeout={1000}
-            >
-              <div
-                key={location.pathname}
-                className={this.state.invert ? "black" : "white"}
+        <HashRouter>
+          <Route
+            render={({ location }) => (
+              <ReactCSSTransitionReplace
+                transitionName="fade"
+                transitionEnterTimeout={1000}
+                transitionLeaveTimeout={1000}
               >
-                <Route path="/" component={Nav} />
-                <Route
-                  path="/"
-                  render={props => (
-                    <ColorToggle
-                      toggleWhite={this.toggleWhite}
-                      toggleBlack={this.toggleBlack}
-                    />
-                  )}
-                />
-                <Switch location={location}>
+                <div
+                  key={location.pathname}
+                  className={this.state.invert ? "black" : "white"}
+                >
+                  <div
+                    id="loading-screen"
+                    className={this.state.loaded ? "loaded" : "not-loaded"}
+                  />
                   <Route
-                    exact
                     path="/"
                     render={props => (
-                      <Home
-                        next={this.next}
-                        previous={this.previous}
-                        activeSlide={this.state.activeSlide}
-                        slides={this.state.slides}
+                      <Nav
+                        toggleListView={this.toggleListView}
+                        location={location}
+                        invert={this.state.invert}
+                        listView={this.state.listView}
                       />
                     )}
                   />
                   <Route
-                    exact
-                    path="/index"
+                    path="/"
                     render={props => (
-                      <Index
-                        slides={this.state.slides}
-                        handleIndexClick={this.handleIndexClick}
+                      <ColorToggle
+                        toggleWhite={this.toggleWhite}
+                        toggleBlack={this.toggleBlack}
                       />
                     )}
                   />
-                </Switch>
-              </div>
-            </ReactCSSTransitionReplace>
-          )}
-        />
+                  <Switch location={location}>
+                    <Route
+                      exact
+                      path="/"
+                      render={props => (
+                        <Home
+                          determineLoading={this.determineLoading}
+                          next={this.next}
+                          previous={this.previous}
+                          activeSlide={this.state.activeSlide}
+                          slides={this.state.slides}
+                          listView={this.state.listView}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/index"
+                      render={props => (
+                        <Index
+                          determineLoading={this.determineLoading}
+                          slides={this.state.slides}
+                          handleIndexClick={this.handleIndexClick}
+                        />
+                      )}
+                    />
+                  </Switch>
+                </div>
+              </ReactCSSTransitionReplace>
+            )}
+          />
+        </HashRouter>
       </div>
-
-      // <div className={this.state.invert ? 'black' : 'white'}>
-      //   <Route path="/" component={Nav}  />
-      //   <Route path="/" render={(props) => (
-      //     <ColorToggle toggleWhite={this.toggleWhite} toggleBlack={this.toggleBlack}/>
-      //   )} />
-      //   <Switch>
-      //     <Route exact path='/' render={(props) => (
-      //       <Home slides={this.state.slides}/>
-      //     )} />
-      //     <Route exact path='/index' render={(props) => (
-      //       <Index slides={this.state.slides}/>
-      //     )} />
-      //   </Switch>
-      // </div>
     );
   }
 }

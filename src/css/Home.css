@@ -11,7 +11,7 @@
 
 .button {
   z-index: 1000;
-  background-color: black;
+  background-color: #121212;
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -81,3 +81,10 @@
   .carousel--image {
     border: 1px solid #fff;
     position: relative; }
+
+.listWrap {
+  padding-top: 100px; }
+  .listWrap img {
+    display: block;
+    width: 100%;
+    padding: 5px; }

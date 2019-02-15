@@ -1,72 +1,90 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import '../css/Nav.css';
+import "../css/Nav.css";
+
+const invertedStyles = {
+  backgroundColor: "#121212"
+};
+
+const uninvertedStyles = {
+  backgroundColor: "inherit"
+};
 
 class Nav extends React.Component {
-
-
-  constructor(){
+  constructor() {
     super();
 
     this.handleInfo = this.handleInfo.bind(this);
 
     this.state = {
-      showInfo: false,
-    }
-
+      showInfo: false
+    };
   }
 
-  handleInfo(){
-    console.log('handling info');
-    const showInfo = !(this.state.showInfo);
+  handleInfo() {
+    console.log("handling info");
+    const showInfo = !this.state.showInfo;
     console.log(showInfo);
-    this.setState({showInfo});
+    this.setState({ showInfo });
   }
 
-  componentDidMount(){
-  }
+  componentDidMount() {}
 
-  render(){
+  render() {
     const path = this.props.location.pathname;
 
-    return(
+    return (
       <div className="nav-wrap">
         <div className="name" onClick={this.handleInfo}>
           <p className="name-p">Pat Martin</p>
           <div
-            className={
-              this.state.showInfo ? 'info reveal' : 'info hide'
+            className={this.state.showInfo ? "info reveal" : "info hide"}
+            style={
+              this.props.invert && this.state.showInfo
+                ? invertedStyles
+                : uninvertedStyles
             }
           >
-              <p>is an artist and photographer from Los Angeles.</p>
+            <p>IS A PHOTOGRAPHER FROM LOS ANGELES, CALIFORNIA.</p>
             <div className="bottom-info">
               <div className="item">
-                <p>1.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>
+                  FOR INQUIRIES OR TO SAY HI:
+                  <br />
+                  <a href="mailto:hipatmartin@gmail.com">
+                    HIPATMARTIN@GMAIL.COM
+                  </a>
+                </p>
               </div>
               <div className="item">
-                <p>2.</p>
-                <p>Personal</p>
-                <p>hipatmartin@gmail.com</p>
-              </div>
-              <div className="item">
-                <p>2.</p>
-                <p>Instagram</p>
-                <p>@patmartin__</p>
+                <p>
+                  INSTAGRAM:
+                  <a href="https://www.instagram.com/patmartin__/">
+                    @PATMARTIN__
+                  </a>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {
-          path === '/' ?
-            ( <Link to={`/index`} className="index">Index</Link> )
-            : (<Link to={`/`} className="home">Home</Link>)
-        }
-
+        {path === "/" ? (
+          <div>
+            <a className="listView" onClick={this.props.toggleListView}>
+              {this.props.listView ? "Slideshow" : "List"}
+            </a>
+            <Link to={`/index`} className="index">
+              Index
+            </Link>
+          </div>
+        ) : (
+          <Link to={`/`} className="home">
+            Home
+          </Link>
+        )}
       </div>
-    )
+    );
   }
 }
 

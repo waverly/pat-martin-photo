@@ -478,6 +478,7 @@ $transition-slow: 1s;
   font-size: $font-size-h1;
   line-height: $line-height-h1;
   font-family: $font-family-h1;
+  font-weight: 300;
   letter-spacing: $letter-spacing-h1;
   @include respond-to(phone) {
     font-size: $font-size-h1-mobile;
@@ -488,6 +489,7 @@ $transition-slow: 1s;
   font-size: $font-size-h2;
   line-height: $line-height-h2;
   font-family: $font-family-h2;
+  font-weight: 300;
   letter-spacing: $letter-spacing-h2;
   @include respond-to(phone) {
     font-size: $font-size-h2-mobile;
@@ -499,6 +501,7 @@ $transition-slow: 1s;
   font-size: $font-size-h3;
   line-height: $line-height-h3;
   font-family: $font-family-h3;
+  font-weight: 300;
   letter-spacing: $letter-spacing-h3;
   @include respond-to(phone) {
     font-size: $font-size-h3-mobile;
@@ -510,6 +513,7 @@ $transition-slow: 1s;
   font-size: $font-size-h4;
   line-height: $line-height-h4;
   font-family: $font-family-h4;
+  font-weight: 300;
   letter-spacing: $letter-spacing-h4;
   @include respond-to(phone) {
     font-size: $font-size-h4-mobile;
@@ -521,6 +525,7 @@ $transition-slow: 1s;
   font-size: $font-size-p;
   line-height: $line-height-p;
   font-family: $font-family-p;
+  font-weight: 300;
   letter-spacing: $letter-spacing-paragraph;
   @include respond-to(phone) {
     font-size: $font-size-p-mobile;
