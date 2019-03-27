@@ -6,7 +6,7 @@ const Slide = props => {
   if (props.secondimage) {
     return (
       <div
-        key={props.image+props.secondimage}
+        key={props.image + props.index}
         style={{
           position: "absolute",
           maxWidth: "100%",
@@ -35,6 +35,7 @@ const Slide = props => {
   } else {
     return (
       <img
+        key={props.image + props.index}
         className="slide"
         src={props.image}
         alt={props.image}
