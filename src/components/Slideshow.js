@@ -6,11 +6,12 @@ const Slide = props => {
   if (props.secondimage) {
     return (
       <div
+        key={props.image+props.secondimage}
         style={{
           position: "absolute",
           maxWidth: "100%",
           maxHeight: "100%",
-          transition: "opacity 0.5s",
+          transition: "opacity .5s",
           opacity: active ? "1" : "0",
           zIndex: active ? "10" : "1",
           display: "flex",
@@ -41,7 +42,7 @@ const Slide = props => {
           position: "absolute",
           maxWidth: "100%",
           maxHeight: "100%",
-          transition: "opacity 0.5s",
+          transition: "opacity .5s",
           opacity: active ? "1" : "0"
         }}
       />

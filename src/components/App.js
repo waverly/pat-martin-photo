@@ -114,7 +114,8 @@ class App extends Component {
     Prismic.api(apiEndpoint).then(api => {
       api
         .query(Prismic.Predicates.at("document.type", "image"), {
-          orderings: "[my.image.order]"
+          orderings: "[my.image.order]",
+          pageSize: 100
         })
         .then(response => {
           // console.log(response); // response is the response object, response.results holds the documents
