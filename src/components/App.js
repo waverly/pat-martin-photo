@@ -36,9 +36,6 @@ class App extends Component {
     let counter = 0;
     const slides = { ...this.state.slides };
     item.forEach(d => {
-      // console.log(d);
-      // let timestamp = Date.now();
-      // data[`item-${timestamp}`] = d;
       if (d.type === "image") {
         slides[counter] = d;
         counter++;
@@ -58,16 +55,13 @@ class App extends Component {
   }
 
   toggleListView() {
-    console.log("toggling list view");
     this.setState(prevState => ({
       listView: !prevState.listView
     }));
   }
 
   handleIndexClick(key) {
-    console.log("clicked on index, key is", key);
     const activeSlide = parseFloat(key);
-    console.log(activeSlide, key);
     this.setState({ activeSlide });
   }
 
@@ -94,14 +88,12 @@ class App extends Component {
   determineLoading(time) {
     if (!this.state.loading) {
       setTimeout(() => {
-        console.log("fading page in");
         this.setState({ loaded: true });
       }, time);
     }
   }
 
   componentDidMount() {
-    // this.determineLoading();
 
     window.addEventListener("resize", () => {
       if (window.innerWidth > 999) {
@@ -118,8 +110,6 @@ class App extends Component {
           pageSize: 100
         })
         .then(response => {
-          // console.log(response); // response is the response object, response.results holds the documents
-          // console.log(response.results);
           this.addData(response.results);
         });
     });
@@ -128,8 +118,6 @@ class App extends Component {
       api
         .query(Prismic.Predicates.at("document.type", "about"))
         .then(response => {
-          console.log(response); // response is the response object, response.results holds the documents
-          console.log(response.results);
           this.addData(response.results);
         });
     });

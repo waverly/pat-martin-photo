@@ -1,11 +1,8 @@
 import React, { Fragment } from "react";
 
 const List = props => {
-  console.log(props.slides);
 
   const slidesArray = Object.entries(props.slides);
-
-  console.log(slidesArray);
 
   return (
     <div className="listWrap">
@@ -20,7 +17,6 @@ const List = props => {
 
           if (data.secondimage) {
             secondImage = data.secondimage.url;
-            console.log("yes there is a second image");
           }
 
           return (
